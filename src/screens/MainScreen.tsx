@@ -10,21 +10,10 @@ import {
 import Place from '../../assets/svg/Place';
 import Route from '../../assets/svg/Route';
 import Housing from '../../assets/svg/Housing';
-
-interface MainScreenProps {}
+import {images} from '../../dummy';
 
 const {width, height} = Dimensions.get('window');
-const MainScreen = (props: MainScreenProps) => {
-  const data = [
-    {
-      id: 1,
-      url: 'https://sun9-32.userapi.com/impf/c836223/v836223221/10cfd/m7J2OjwVhHA.jpg?size=637x603&quality=96&sign=f066a783bbaa0ba0429c80c06b39c0f8&c_uniq_tag=5FYskGgSs-qGCBMIu5n4WTe13N7D8Gnw69aQRqJLvFo&type=album',
-    },
-    {
-      id: 2,
-      url: 'https://baikalgo.ru/wp-content/uploads/2021/03/barguzinskij-dacan.jpg',
-    },
-  ];
+const MainScreen = () => {
   const renderItem = ({item}) => {
     return (
       <View>
@@ -106,7 +95,7 @@ const MainScreen = (props: MainScreenProps) => {
             <Text style={{color: '#2F80ED'}}>Смотреть еще</Text>
           </View>
           <FlatList
-            data={data}
+            data={images}
             keyExtractor={item => `${item.id}`}
             renderItem={renderItem}
             horizontal
