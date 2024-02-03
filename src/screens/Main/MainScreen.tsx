@@ -7,10 +7,10 @@ import {
   Dimensions,
   FlatList,
 } from 'react-native';
-import Place from '../../assets/svg/Place';
-import Route from '../../assets/svg/Route';
-import Housing from '../../assets/svg/Housing';
-import {images} from '../../dummy';
+import Place from '../../../assets/svg/Place';
+import Route from '../../../assets/svg/Route';
+import Housing from '../../../assets/svg/Housing';
+import {images} from '../../../dummy';
 
 const {width, height} = Dimensions.get('window');
 const MainScreen = () => {
@@ -60,7 +60,7 @@ const MainScreen = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/mainImage.png')}
+        source={require('../../../assets/mainImage.png')}
         style={{width, height: height * 0.38}}
       />
       <View>
@@ -110,7 +110,7 @@ const MainScreen = () => {
 export default MainScreen;
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: {flex: 1, backgroundColor: 'white'},
   menuContainer: {
     backgroundColor: 'white',
     elevation: 0.3,

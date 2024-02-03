@@ -3,7 +3,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import MainScreen from '../MainScreen';
+import MainScreen from '../screens/Main/MainScreen';
+import PlacesScreen from '../screens/Places/PlacesScreen';
+import ImpressionsScreen from '../screens/Impressions/ImpressionsScreen';
+import HousingScreen from '../screens/Housing/HousingScreen';
+import ProfileScreen from '../screens/Profile/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,28 +24,28 @@ const menuItems = [
     name: 'Places',
     icon: 'location',
     label: 'Места',
-    component: MainScreen,
+    component: PlacesScreen,
   },
   {
     id: '3',
     name: 'Impressions',
     icon: 'map',
     label: 'Впечатления',
-    component: MainScreen,
+    component: ImpressionsScreen,
   },
   {
     id: '4',
     name: 'Housing',
     icon: 'search',
     label: 'Жилье',
-    component: MainScreen,
+    component: HousingScreen,
   },
   {
     id: '5',
     name: 'Profile',
     icon: 'person',
     label: 'Профиль',
-    component: MainScreen,
+    component: ProfileScreen,
   },
 ];
 
