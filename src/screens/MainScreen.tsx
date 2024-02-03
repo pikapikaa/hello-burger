@@ -143,8 +143,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   menuTitle: {
-    fontWeight: 'bold',
-    color: '#3D4252',
     fontSize: 11,
+    fontFamily: 'SF-Pro-Display-Bold',
+    color: '#3D4252',
   },
 });
