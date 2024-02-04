@@ -6,6 +6,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {FlashList} from '@shopify/flash-list';
 
@@ -49,53 +50,49 @@ const MainScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../../../assets/mainImage.png')}
-        style={{width, height: height * 0.38}}
-      />
-      <View>
-        <Menu data={menuItems} />
+    <ScrollView>
+      <View style={styles.container}>
+        <Image
+          source={require('../../../assets/mainImage.png')}
+          style={{width, height: height * 0.38}}
+        />
+        <View>
+          <Menu data={menuItems} />
 
-        <View style={styles.content}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              paddingStart: 20,
-              paddingEnd: 10,
-            }}>
-            <Text
-              style={{
-                fontFamily: 'SF-Pro-Display-Semibold',
-                color: '#3D4252',
-                fontSize: 14,
-              }}>
-              Популярные места
-            </Text>
-
-            <TouchableOpacity onPress={onPopularNavigateHandle}>
+          <View style={styles.content}>
+            <View style={styles.subtitleContainer}>
               <Text
                 style={{
-                  color: '#2F80ED',
-                  fontSize: 12,
-                  fontFamily: 'SF-Pro-Display-Regular',
+                  fontFamily: 'SF-Pro-Display-Semibold',
+                  color: '#3D4252',
+                  fontSize: 14,
                 }}>
-                Смотреть еще
+                Популярные места
               </Text>
-            </TouchableOpacity>
-          </View>
 
-          <FlashList
-            estimatedItemSize={265}
-            data={images}
-            renderItem={renderItem}
-            horizontal
-            ItemSeparatorComponent={separator}
-          />
+              <TouchableOpacity onPress={onPopularNavigateHandle}>
+                <Text
+                  style={{
+                    color: '#2F80ED',
+                    fontSize: 12,
+                    fontFamily: 'SF-Pro-Display-Regular',
+                  }}>
+                  Смотреть еще
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            <FlashList
+              estimatedItemSize={265}
+              data={images}
+              renderItem={renderItem}
+              horizontal
+              ItemSeparatorComponent={separator}
+            />
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -103,6 +100,12 @@ export default MainScreen;
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: 'white'},
+  subtitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingStart: 20,
+    paddingEnd: 10,
+  },
   content: {marginTop: 16 + 55, gap: 10},
   separatorContainer: {width: 10},
 });
