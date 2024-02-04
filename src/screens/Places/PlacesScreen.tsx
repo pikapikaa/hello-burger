@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
 interface PlacesScreenProps {}
@@ -6,7 +6,7 @@ interface PlacesScreenProps {}
 const PlacesScreen = (props: PlacesScreenProps) => {
   return (
     <View style={styles.container}>
-      <Text>PlacesScreen</Text>
+      <Text style={styles.text}>Места</Text>
     </View>
   );
 };
@@ -14,5 +14,15 @@ const PlacesScreen = (props: PlacesScreenProps) => {
 export default PlacesScreen;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontFamily: 'SF-Pro-Display-Bold',
+    fontSize: 14,
+  },
 });

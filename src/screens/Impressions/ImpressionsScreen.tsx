@@ -6,7 +6,7 @@ interface ImpressionsScreenProps {}
 const ImpressionsScreen = (props: ImpressionsScreenProps) => {
   return (
     <View style={styles.container}>
-      <Text>ImpressionsScreen</Text>
+      <Text style={styles.text}>Впечатления</Text>
     </View>
   );
 };
@@ -14,5 +14,15 @@ const ImpressionsScreen = (props: ImpressionsScreenProps) => {
 export default ImpressionsScreen;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontFamily: 'SF-Pro-Display-Bold',
+    fontSize: 14,
+  },
 });

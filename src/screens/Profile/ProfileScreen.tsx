@@ -6,7 +6,7 @@ interface ProfileScreenProps {}
 const ProfileScreen = (props: ProfileScreenProps) => {
   return (
     <View style={styles.container}>
-      <Text>ProfileScreen</Text>
+      <Text style={styles.text}>Профиль</Text>
     </View>
   );
 };
@@ -14,5 +14,15 @@ const ProfileScreen = (props: ProfileScreenProps) => {
 export default ProfileScreen;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontFamily: 'SF-Pro-Display-Bold',
+    fontSize: 14,
+  },
 });

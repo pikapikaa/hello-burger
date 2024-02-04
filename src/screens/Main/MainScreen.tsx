@@ -43,7 +43,7 @@ const MainScreen = () => {
       <View>
         <Menu data={menuItems} />
 
-        <View style={{marginTop: 16 + 55, gap: 10}}>
+        <View style={styles.content}>
           <View
             style={{
               flexDirection: 'row',
@@ -86,5 +86,6 @@ export default MainScreen;
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: 'white'},
+  content: {marginTop: 16 + 55, gap: 10},
   separatorContainer: {width: 10},
 });

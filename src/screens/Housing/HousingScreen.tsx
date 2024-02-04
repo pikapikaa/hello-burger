@@ -6,7 +6,7 @@ interface HousingScreenProps {}
 const HousingScreen = (props: HousingScreenProps) => {
   return (
     <View style={styles.container}>
-      <Text>HousingScreen</Text>
+      <Text style={styles.text}>Жилье</Text>
     </View>
   );
 };
@@ -14,5 +14,15 @@ const HousingScreen = (props: HousingScreenProps) => {
 export default HousingScreen;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontFamily: 'SF-Pro-Display-Bold',
+    fontSize: 14,
+  },
 });
