@@ -1,61 +1,20 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  Dimensions,
-  FlatList,
-} from 'react-native';
+import {Text, View, StyleSheet, Image, Dimensions} from 'react-native';
+import {FlashList} from '@shopify/flash-list';
+
 import Place from '../../../assets/svg/Place';
 import Route from '../../../assets/svg/Route';
 import Housing from '../../../assets/svg/Housing';
 import {images} from '../../../dummy';
+import Attraction from './components/Attraction';
 
 const {width, height} = Dimensions.get('window');
 const MainScreen = () => {
-  const renderItem = ({item}) => {
-    return (
-      <View>
-        <Image
-          source={{uri: item.url}}
-          style={{width: 265, height: 265, opacity: 0.8}}
-        />
-        <View
-          style={{
-            position: 'absolute',
-            bottom: 10,
-            left: 10,
-            right: 10,
-          }}>
-          <Text style={{color: 'white', fontWeight: '700', marginBottom: 15}}>
-            Баргузинский дацан
-          </Text>
-          <View style={{gap: 5}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <Text style={{color: 'white'}}>Маршрутов</Text>
-              <Text style={{color: 'white'}}>5</Text>
-            </View>
-            <View
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={{color: 'white'}}>Гид</Text>
-              <Text style={{color: 'white'}}>5</Text>
-            </View>
-
-            <View
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={{color: 'white'}}>Жилья</Text>
-              <Text style={{color: 'white'}}>5</Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    );
+  const renderItem = ({item}: {item: any}) => {
+    return <Attraction data={item} />;
   };
+
+  const separator = () => <View style={styles.separatorContainer} />;
 
   return (
     <View style={styles.container}>
@@ -87,19 +46,38 @@ const MainScreen = () => {
           </View>
         </View>
 
-        <View style={{marginTop: 16 + 55, marginHorizontal: 16, gap: 10}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{fontWeight: '600', color: '#3D4252'}}>
+        <View style={{marginTop: 16 + 55, gap: 10}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingStart: 20,
+              paddingEnd: 10,
+            }}>
+            <Text
+              style={{
+                fontFamily: 'SF-Pro-Display-Semibold',
+                color: '#3D4252',
+                fontSize: 14,
+              }}>
               Популярные места
             </Text>
-            <Text style={{color: '#2F80ED'}}>Смотреть еще</Text>
+            <Text
+              style={{
+                color: '#2F80ED',
+                fontSize: 12,
+                fontFamily: 'SF-Pro-Display-Regular',
+              }}>
+              Смотреть еще
+            </Text>
           </View>
-          <FlatList
+
+          <FlashList
+            estimatedItemSize={265}
             data={images}
-            keyExtractor={item => `${item.id}`}
             renderItem={renderItem}
             horizontal
-            ItemSeparatorComponent={() => <View style={{width: 10}} />}
+            ItemSeparatorComponent={separator}
           />
         </View>
       </View>
@@ -136,4 +114,5 @@ const styles = StyleSheet.create({
     fontFamily: 'SF-Pro-Display-Bold',
     color: '#3D4252',
   },
+  separatorContainer: {width: 10},
 });
