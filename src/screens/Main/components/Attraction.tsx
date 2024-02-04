@@ -1,5 +1,7 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Text, View, StyleSheet, Image, ViewStyle} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const SIZE_IMAGE = 265;
 
@@ -9,8 +11,15 @@ interface AttractionProps {
 }
 
 const Attraction = ({data, style}: AttractionProps) => {
+  const navigation = useNavigation();
+
+  const onPlaceNavigate = () => {
+    navigation.navigate('PlaceScreen', {data});
+  };
   return (
-    <View style={[styles.container, style]}>
+    <TouchableOpacity
+      style={[styles.container, style]}
+      onPress={onPlaceNavigate}>
       <Image source={{uri: data.url}} style={styles.image} resizeMode="cover" />
       <View style={styles.noteContainer}>
         <Text style={styles.title}>{data.title}</Text>
@@ -33,7 +42,7 @@ const Attraction = ({data, style}: AttractionProps) => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

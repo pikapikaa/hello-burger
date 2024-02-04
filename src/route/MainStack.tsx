@@ -3,6 +3,7 @@ import React from 'react';
 
 import MainScreen from '../screens/Main/MainScreen';
 import PopularPlacesScreen from '../screens/Popular/PopularPlacesSceen';
+import PlaceScreen from '../screens/Places/PlaceScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,15 @@ const MainStack = () => {
         options={{
           headerShown: true,
           title: 'Популярные места',
+          headerTitleStyle: {fontFamily: 'SF-Pro-Display-Bold', fontSize: 20},
+        }}
+      />
+      <Stack.Screen
+        name="PlaceScreen"
+        component={PlaceScreen}
+        options={{
+          headerShown: true,
+          title: '',
           headerTitleStyle: {fontFamily: 'SF-Pro-Display-Bold', fontSize: 20},
         }}
       />

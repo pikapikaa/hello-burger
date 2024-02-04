@@ -1,15 +1,19 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const PopularPlacesScreen = () => {
+const PlaceScreen = () => {
+  const route = useRoute();
+  const data = route.params?.data;
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Популярные места</Text>
+      <Text style={styles.text}>{data.title}</Text>
     </View>
   );
 };
 
-export default PopularPlacesScreen;
+export default PlaceScreen;
 
 const styles = StyleSheet.create({
   container: {

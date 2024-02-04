@@ -8,15 +8,21 @@ import {
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {DrawerActions, useNavigation} from '@react-navigation/native';
 
 interface MainHeaderProps {
   style: ViewStyle;
 }
 
 const MainHeader = ({style}: MainHeaderProps) => {
+  const navigation = useNavigation();
+
+  const onDrawerPressHandler = () => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  };
   return (
     <View style={[styles.container, style]}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onDrawerPressHandler}>
         <MaterialCommunityIcons name="menu" color="white" size={20} />
       </TouchableOpacity>
 
