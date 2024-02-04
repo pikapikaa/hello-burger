@@ -3,10 +3,10 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   Dimensions,
   TouchableOpacity,
   ScrollView,
+  ImageBackground,
 } from 'react-native';
 import {FlashList} from '@shopify/flash-list';
 
@@ -14,6 +14,7 @@ import {images} from '../../../dummy';
 import Attraction from './components/Attraction';
 import Menu from './components/Menu';
 import {useNavigation} from '@react-navigation/native';
+import MainHeader from './components/MainHeader';
 
 const {width, height} = Dimensions.get('window');
 
@@ -52,10 +53,22 @@ const MainScreen = () => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Image
+        <ImageBackground
           source={require('../../../assets/mainImage.png')}
-          style={{width, height: height * 0.38}}
-        />
+          style={{width, height: height * 0.38}}>
+          <MainHeader style={{position: 'absolute'}} />
+          <Text
+            style={{
+              position: 'absolute',
+              color: 'white',
+              left: 20,
+              top: (height * 0.38) / 2,
+              fontFamily: 'SF-Pro-Display-RegularItalic',
+            }}>
+            Организуй незабываемый {'\n'} отдых в Бурятии
+          </Text>
+        </ImageBackground>
+
         <View>
           <Menu data={menuItems} />
 
