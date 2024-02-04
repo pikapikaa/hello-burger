@@ -1,4 +1,5 @@
 import React from 'react';
+import {Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -87,7 +88,9 @@ const TabNavigator = () => {
 };
 
 const DrawerNavigator = () => (
-  <Drawer.Navigator screenOptions={{headerShown: false}}>
+  <Drawer.Navigator
+    screenOptions={{headerShown: false}}
+    drawerContent={() => <Text>что-то будет</Text>}>
     <Drawer.Screen name="TabNavigator" component={TabNavigator} />
   </Drawer.Navigator>
 );
