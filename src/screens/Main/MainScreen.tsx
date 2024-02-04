@@ -7,10 +7,16 @@ import Attraction from './components/Attraction';
 import Menu from './components/Menu';
 
 const {width, height} = Dimensions.get('window');
+
 const menuItems = [
-  {id: '1', name: 'Места', icon: 'map-search-outline'},
-  {id: '2', name: 'Маршруты', icon: 'map-marker-distance'},
-  {id: '3', name: 'Жилье', icon: 'bed-king-outline'},
+  {id: '1', name: 'Места', icon: 'map-search-outline', screen: 'Places'},
+  {
+    id: '2',
+    name: 'Маршруты',
+    icon: 'map-marker-distance',
+    screen: 'Impressions',
+  },
+  {id: '3', name: 'Жилье', icon: 'bed-king-outline', screen: 'Housing'},
 ];
 
 const MainScreen = () => {

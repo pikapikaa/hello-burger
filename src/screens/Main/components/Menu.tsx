@@ -1,5 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Text, View, StyleSheet, Dimensions} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const {width} = Dimensions.get('window');
@@ -9,13 +16,22 @@ interface MenuProps {
 }
 
 const Menu = ({data}: MenuProps) => {
+  const navigation = useNavigation();
+  const onPress = (screen: string) => {
+    navigation.navigate(screen);
+  };
   return (
     <View style={styles.menuContainer}>
       {data.map(item => (
-        <View key={item.id} style={styles.menuItemContainer}>
+        <TouchableOpacity
+          key={item.id}
+          style={styles.menuItemContainer}
+          onPress={() => {
+            onPress(item.screen);
+          }}>
           <MaterialCommunityIcons name={item.icon} size={33} color="#3D4252" />
           <Text style={styles.menuTitle}>{item.name}</Text>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );
