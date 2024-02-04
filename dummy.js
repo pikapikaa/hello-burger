@@ -34,6 +34,9 @@ const images = [
   {
     id: 6,
     title: 'Земля веры — Баргуджин Тукум',
+    routes: 3,
+    guide: 24,
+    housing: 3,
     url: 'https://sun9-50.userapi.com/impf/c637420/v637420837/51553/5bHanRmL0oA.jpg?size=807x454&quality=96&sign=792fb5f6cef5e79c89bf9e18453d6164&c_uniq_tag=HqckjVMHEl7T0QdxuFcKAjZT2fX4aGF-AwxZHpPgHtM&type=album',
   },
   {

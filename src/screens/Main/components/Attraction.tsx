@@ -1,15 +1,16 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, ViewStyle} from 'react-native';
 
 const SIZE_IMAGE = 265;
 
 interface AttractionProps {
   data: any;
+  style?: ViewStyle;
 }
 
-const Attraction = ({data}: AttractionProps) => {
+const Attraction = ({data, style}: AttractionProps) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Image source={{uri: data.url}} style={styles.image} resizeMode="cover" />
       <View style={styles.noteContainer}>
         <Text style={styles.title}>{data.title}</Text>

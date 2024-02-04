@@ -20,6 +20,7 @@ const Menu = ({data}: MenuProps) => {
   const onPress = (screen: string) => {
     navigation.navigate(screen);
   };
+
   return (
     <View style={styles.menuContainer}>
       {data.map(item => (

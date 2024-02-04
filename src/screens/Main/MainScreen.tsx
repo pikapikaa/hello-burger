@@ -20,8 +20,16 @@ const menuItems = [
 ];
 
 const MainScreen = () => {
-  const renderItem = ({item}: {item: any}) => {
-    return <Attraction data={item} />;
+  const renderItem = ({item, index}: {item: any; index: number}) => {
+    return (
+      <Attraction
+        data={item}
+        style={{
+          marginLeft: index === 0 ? 16 : 0,
+          marginRight: index === images.length - 1 ? 16 : 0,
+        }}
+      />
+    );
   };
 
   const separator = () => <View style={styles.separatorContainer} />;
