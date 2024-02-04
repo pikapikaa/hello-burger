@@ -16,14 +16,6 @@ const images = [
     url: 'https://baikalgo.ru/wp-content/uploads/2021/03/barguzinskij-dacan.jpg',
   },
   {
-    id: 3,
-    title: 'Флаг Бурятии',
-    routes: 3,
-    guide: 24,
-    housing: 3,
-    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Flag_of_Buryatia.svg/1200px-Flag_of_Buryatia.svg.png',
-  },
-  {
     id: 4,
     title: 'Национальный костюм',
     routes: 33,
@@ -38,6 +30,19 @@ const images = [
     guide: 41,
     housing: 23,
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyNw7xMe62EC8i1sEsspWj6xH-GXnhXZHsKNBtgKxGYBA-Ug1mdW09WfP2Y101KtsuL50&usqp=CAU',
+  },
+  {
+    id: 6,
+    title: 'Земля веры — Баргуджин Тукум',
+    url: 'https://sun9-50.userapi.com/impf/c637420/v637420837/51553/5bHanRmL0oA.jpg?size=807x454&quality=96&sign=792fb5f6cef5e79c89bf9e18453d6164&c_uniq_tag=HqckjVMHEl7T0QdxuFcKAjZT2fX4aGF-AwxZHpPgHtM&type=album',
+  },
+  {
+    id: 3,
+    title: 'Флаг Бурятии',
+    routes: 3,
+    guide: 24,
+    housing: 3,
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Flag_of_Buryatia.svg/1200px-Flag_of_Buryatia.svg.png',
   },
 ];
 
