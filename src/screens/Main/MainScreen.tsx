@@ -119,6 +119,6 @@ const styles = StyleSheet.create({
     paddingStart: 20,
     paddingEnd: 10,
   },
-  content: {marginTop: 16 + 55, gap: 10},
+  content: {marginTop: 16 + 55, gap: 10, paddingBottom: 16},
   separatorContainer: {width: 10},
 });
