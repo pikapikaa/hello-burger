@@ -1,5 +1,11 @@
 import React from 'react';
-import {Text, View, StyleSheet, ViewStyle} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  ViewStyle,
+  TouchableOpacity,
+} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -10,9 +16,14 @@ interface MainHeaderProps {
 const MainHeader = ({style}: MainHeaderProps) => {
   return (
     <View style={[styles.container, style]}>
-      <MaterialCommunityIcons name="menu" color="white" size={20} />
+      <TouchableOpacity>
+        <MaterialCommunityIcons name="menu" color="white" size={20} />
+      </TouchableOpacity>
+
       <Text style={styles.title}>Hello, Buryatia</Text>
-      <Ionicons name="search" color="white" size={20} />
+      <TouchableOpacity>
+        <Ionicons name="search" color="white" size={20} />
+      </TouchableOpacity>
     </View>
   );
 };
