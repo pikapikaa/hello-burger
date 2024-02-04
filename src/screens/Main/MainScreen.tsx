@@ -1,10 +1,18 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image, Dimensions} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import {FlashList} from '@shopify/flash-list';
 
 import {images} from '../../../dummy';
 import Attraction from './components/Attraction';
 import Menu from './components/Menu';
+import {useNavigation} from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('window');
 
@@ -20,6 +28,8 @@ const menuItems = [
 ];
 
 const MainScreen = () => {
+  const navigation = useNavigation();
+
   const renderItem = ({item, index}: {item: any; index: number}) => {
     return (
       <Attraction
@@ -33,6 +43,10 @@ const MainScreen = () => {
   };
 
   const separator = () => <View style={styles.separatorContainer} />;
+
+  const onPopularNavigateHandle = () => {
+    navigation.navigate('PopularPlacesScreen');
+  };
 
   return (
     <View style={styles.container}>
@@ -59,14 +73,17 @@ const MainScreen = () => {
               }}>
               Популярные места
             </Text>
-            <Text
-              style={{
-                color: '#2F80ED',
-                fontSize: 12,
-                fontFamily: 'SF-Pro-Display-Regular',
-              }}>
-              Смотреть еще
-            </Text>
+
+            <TouchableOpacity onPress={onPopularNavigateHandle}>
+              <Text
+                style={{
+                  color: '#2F80ED',
+                  fontSize: 12,
+                  fontFamily: 'SF-Pro-Display-Regular',
+                }}>
+                Смотреть еще
+              </Text>
+            </TouchableOpacity>
           </View>
 
           <FlashList
