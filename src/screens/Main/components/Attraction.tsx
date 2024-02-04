@@ -19,7 +19,7 @@ const Attraction = ({data}: AttractionProps) => {
           right: 10,
         }}>
         <Text style={{color: 'white', fontWeight: '700', marginBottom: 15}}>
-          dБаргузинский дацан1
+          {data.title}
         </Text>
         <View style={{gap: 5}}>
           <View
@@ -28,16 +28,16 @@ const Attraction = ({data}: AttractionProps) => {
               justifyContent: 'space-between',
             }}>
             <Text style={{color: 'white'}}>Маршрутов</Text>
-            <Text style={{color: 'white'}}>5</Text>
+            <Text style={{color: 'white'}}>{data.route}</Text>
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Text style={{color: 'white'}}>Гид</Text>
-            <Text style={{color: 'white'}}>5</Text>
+            <Text style={{color: 'white'}}>{data.guide}</Text>
           </View>
 
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Text style={{color: 'white'}}>Жилья</Text>
-            <Text style={{color: 'white'}}>5</Text>
+            <Text style={{color: 'white'}}>{data.housing}</Text>
           </View>
         </View>
       </View>
