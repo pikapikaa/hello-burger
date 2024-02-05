@@ -26,15 +26,7 @@ const MainStack = () => {
           headerTitleStyle: {fontFamily: 'SF-Pro-Display-Bold', fontSize: 20},
         }}
       />
-      <Stack.Screen
-        name="PlaceScreen"
-        component={PlaceScreen}
-        options={{
-          headerShown: true,
-          title: '',
-          headerTitleStyle: {fontFamily: 'SF-Pro-Display-Bold', fontSize: 20},
-        }}
-      />
+      <Stack.Screen name="PlaceScreen" component={PlaceScreen} />
     </Stack.Navigator>
   );
 };

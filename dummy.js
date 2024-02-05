@@ -21,7 +21,7 @@ const images = [
     routes: 33,
     guide: 44,
     housing: 93,
-    url: 'https://i.pinimg.com/736x/3d/da/56/3dda56d83a021e676945b7bd24a3436f.jpg',
+    url: 'https://static.mk.ru/upload/iblock_mk/photoreport/new/3d/7d/94/495_95585.jpg',
   },
   {
     id: 5,
@@ -29,7 +29,7 @@ const images = [
     routes: 13,
     guide: 41,
     housing: 23,
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyNw7xMe62EC8i1sEsspWj6xH-GXnhXZHsKNBtgKxGYBA-Ug1mdW09WfP2Y101KtsuL50&usqp=CAU',
+    url: 'https://avatars.mds.yandex.net/get-altay/9728306/2a0000018a45a2df78ebccb606fb447f1ff8/orig',
   },
   {
     id: 6,
@@ -46,6 +46,14 @@ const images = [
     guide: 24,
     housing: 3,
     url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Flag_of_Buryatia.svg/1200px-Flag_of_Buryatia.svg.png',
+  },
+  {
+    id: 7,
+    title: 'Гора Улзыха',
+    routes: 23,
+    guide: 23,
+    housing: 23,
+    url: 'https://lh3.googleusercontent.com/proxy/iWrZRP4RqVUtdr0Qe3QexHmi97XQHT7lFyvFnSbMkNBfUS74IwqUQdp6WVYr6Q7s7ShU1Ui63789Gqa94aK90fdaTS24',
   },
 ];
 
