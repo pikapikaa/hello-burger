@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {colors, stylesConst} from '../../constants';
 
 interface HeaderProps {
   style?: ViewStyle;
@@ -23,9 +24,9 @@ const Header = ({title, style}: HeaderProps) => {
         onPress={() => {
           navigation.goBack();
         }}>
-        <Ionicons name="arrow-back" color="white" size={20} />
+        <Ionicons name="arrow-back" color="black" size={20} />
       </TouchableOpacity>
-      {/* <Text style={{color: 'red'}}>{title}</Text> */}
+      <Text style={stylesConst.text_16m}>{title}</Text>
     </View>
   );
 };
@@ -37,7 +38,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 20,
-    paddingHorizontal: 16,
-    paddingTop: 16,
+    padding: 16,
+    backgroundColor: colors.WHITE,
+    width: '100%',
+    elevation: 10,
   },
 });

@@ -14,7 +14,7 @@ const PlaceScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title="fdssdf" style={styles.headerContainer} />
+      <Header title={data.title} style={styles.headerContainer} />
       <ScrollView>
         <ImagePlace url={data.url} />
         <PlaceView title={data.title} text={data.text} />
