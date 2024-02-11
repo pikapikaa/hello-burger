@@ -4,7 +4,7 @@ export const {width, height} = Dimensions.get('window');
 
 export const colors = {
   BG: '#F5F5F5',
-  TEXT_TITLE: '#212121',
+  TEXT_TITLE: '#192D45DE',
   ORANGE: '#FF6900',
   INACTIVE_TEXT: '#9E9E9E',
   SECOND_BTN: '#EEEEEE',
@@ -75,6 +75,11 @@ export const stylesConst = StyleSheet.create({
   text_title_20: {
     fontSize: normalize(20),
     fontFamily: fonts[500],
+    color: colors.TEXT_TITLE,
+  },
+  text_20m: {
+    fontSize: normalize(20),
+    fontFamily: fonts[800],
     color: colors.TEXT_TITLE,
   },
   text_title_24: {

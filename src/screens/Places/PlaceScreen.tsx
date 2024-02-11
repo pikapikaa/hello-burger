@@ -1,6 +1,12 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 import React from 'react';
-import {View, StyleSheet, ImageBackground, Text} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  Text,
+  ScrollView,
+} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {colors, height, stylesConst, width} from '../../../constants';
@@ -14,30 +20,71 @@ const PlaceScreen = () => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={{uri: data.url}}
-        style={styles.imageContainer}
-        resizeMode="cover">
-        <TouchableOpacity
-          onPress={() => {
-            navigation.goBack();
-          }}>
-          <Ionicons name="arrow-back" color="white" size={20} />
-        </TouchableOpacity>
+      <ScrollView>
+        <ImageBackground
+          source={{uri: data.url}}
+          style={styles.imageContainer}
+          resizeMode="cover">
+          <TouchableOpacity
+            onPress={() => {
+              navigation.goBack();
+            }}>
+            <Ionicons name="arrow-back" color="white" size={20} />
+          </TouchableOpacity>
 
-        <View style={styles.row}>
-          <Ionicons name="image-outline" color="white" size={20} />
-          <Text style={styles.label}>13 фото</Text>
-        </View>
-        <View style={styles.actionContainer}>
-          <View style={styles.iconContainer}>
-            <Ionicons name="heart-outline" size={25} color="#3D4252" />
+          <View style={styles.row}>
+            <Ionicons name="image-outline" color="white" size={20} />
+            <Text style={styles.label}>13 фото</Text>
           </View>
-          <View style={styles.iconContainer}>
-            <Ionicons name="share-social-outline" size={25} color="#3D4252" />
+          <View style={styles.actionContainer}>
+            <View style={styles.iconContainer}>
+              <Ionicons name="heart-outline" size={25} color="#3D4252" />
+            </View>
+            <View style={styles.iconContainer}>
+              <Ionicons name="share-social-outline" size={25} color="#3D4252" />
+            </View>
           </View>
+        </ImageBackground>
+        <View style={{padding: 16}}>
+          <Text style={stylesConst.text_16r}>{data.title}</Text>
+          <Text
+            style={[
+              stylesConst.text_16r,
+              {color: colors.TEXT_TITLE, textAlign: 'justify', lineHeight: 23},
+            ]}>
+            {data.text}
+          </Text>
         </View>
-      </ImageBackground>
+      </ScrollView>
+      <View
+        style={{
+          backgroundColor: 'white',
+          elevation: 10,
+          padding: 16,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        <View>
+          <Text style={stylesConst.text_20m}>От 6400 ₽</Text>
+          <Text style={stylesConst.text_14r}>за человека</Text>
+        </View>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#0075FF',
+            paddingHorizontal: 20,
+            paddingVertical: 10,
+            borderRadius: 20,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 8,
+          }}>
+          <Ionicons name="calendar-outline" color="white" size={20} />
+          <Text style={[stylesConst.text_14m, {color: 'white'}]}>
+            Показать даты
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

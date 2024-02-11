@@ -11,6 +11,7 @@ import HousingScreen from '../screens/Housing/HousingScreen';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 import MainStack from './MainStack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import PlaceScreen from '../screens/Places/PlaceScreen';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -92,6 +93,7 @@ const DrawerNavigator = () => (
     screenOptions={{headerShown: false}}
     drawerContent={() => <Text>что-то будет</Text>}>
     <Drawer.Screen name="TabNavigator" component={TabNavigator} />
+    <Drawer.Screen name="PlaceScreen" component={PlaceScreen} />
   </Drawer.Navigator>
 );
 
