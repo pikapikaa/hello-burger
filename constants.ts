@@ -36,6 +36,7 @@ export const colors = {
   GREEN_LIGHT: '#D9F8DD',
   GREEN_ORDER: '#428C4B',
   RED_LIGHT: '#FFE3E3',
+  BLUE: '#0075FF',
 };
 
 export const fonts = {
@@ -107,6 +108,11 @@ export const stylesConst = StyleSheet.create({
     fontFamily: fonts[500],
     color: colors.INACTIVE_TEXT,
   },
+  text_18b: {
+    fontSize: normalize(18),
+    fontFamily: fonts[800],
+    color: colors.INACTIVE_TEXT,
+  },
   text_16m: {
     fontSize: normalize(16),
     fontFamily: fonts[500],
@@ -135,7 +141,7 @@ export const stylesConst = StyleSheet.create({
   text_12r: {
     fontSize: normalize(12),
     fontFamily: fonts[400],
-    color: colors.INACTIVE_TEXT,
+    color: colors.TEXT_TITLE,
   },
   text_18r: {
     fontSize: normalize(18),
