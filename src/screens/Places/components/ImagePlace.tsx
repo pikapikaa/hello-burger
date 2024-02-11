@@ -1,12 +1,5 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {
-  Text,
-  View,
-  StyleSheet,
-  ImageBackground,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, View, StyleSheet, ImageBackground} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {colors, height, stylesConst, width} from '../../../../constants';
@@ -16,19 +9,11 @@ interface PlaceImageProps {
 }
 
 const ImagePlace = ({url}: PlaceImageProps) => {
-  const navigation = useNavigation();
   return (
     <ImageBackground
       source={{uri: url}}
       style={styles.imageContainer}
       resizeMode="cover">
-      <TouchableOpacity
-        onPress={() => {
-          navigation.goBack();
-        }}>
-        <Ionicons name="arrow-back" color="white" size={20} />
-      </TouchableOpacity>
-
       <View style={styles.row}>
         <Ionicons name="image-outline" color="white" size={20} />
         <Text style={styles.label}>13 фото</Text>
@@ -51,7 +36,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width,
     height: height / 3,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     paddingLeft: 22,
     paddingVertical: 17,
   },

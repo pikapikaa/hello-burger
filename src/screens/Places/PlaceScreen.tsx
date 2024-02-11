@@ -5,6 +5,7 @@ import {View, StyleSheet, ScrollView} from 'react-native';
 import ImagePlace from './components/ImagePlace';
 import PlaceView from './components/PlaceView';
 import FooterPlace from './components/FooterPlace';
+import Header from '../../components/Header';
 
 const PlaceScreen = () => {
   const route = useRoute();
@@ -13,6 +14,7 @@ const PlaceScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Header title="fdssdf" style={styles.headerContainer} />
       <ScrollView>
         <ImagePlace url={data.url} />
         <PlaceView title={data.title} text={data.text} />
@@ -29,4 +31,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
+  headerContainer: {position: 'absolute', zIndex: 1},
 });
