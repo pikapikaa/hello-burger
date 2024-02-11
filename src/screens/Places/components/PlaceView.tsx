@@ -4,6 +4,7 @@ import {colors, stylesConst} from '../../../../constants';
 import Chip from '../../../components/Chip';
 import Rating from '../../../components/Rating';
 import Duration from '../../../components/Duration';
+import TabPlace from './TabPlace';
 
 interface TitlePlaceProps {
   title: string;
@@ -22,9 +23,7 @@ const TitlePlace = ({title, text}: TitlePlaceProps) => {
         </View>
       </View>
 
-      <View>
-        <Text style={styles.text}>{text}</Text>
-      </View>
+      <TabPlace text={text} />
     </View>
   );
 };
@@ -36,10 +35,4 @@ const styles = StyleSheet.create({
   titleContainer: {gap: 10},
   title: {...stylesConst.text_18b, color: colors.TEXT_TITLE},
   row: {flexDirection: 'row', alignItems: 'center', gap: 24},
-  text: {
-    ...stylesConst.text_16r,
-    color: colors.TEXT_TITLE,
-    textAlign: 'justify',
-    lineHeight: 23,
-  },
 });
